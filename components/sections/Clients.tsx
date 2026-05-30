@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const clients = ["/globe.svg", "/vercel.svg", "/next.svg"];
+const clients = ["/globe.svg", "/vercel.svg", "/logos/pepsi.png"];
 
 export default function Clients() {
     return (
