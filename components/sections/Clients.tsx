@@ -1,32 +1,38 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import ClientHoverCard from "./ClientHoverCard";
 
-const clients = ["/globe.svg", "/vercel.svg", "/logos/pepsi.png"];
+const clients = [
+  {
+    name: "Pepsi",
+    logo: "/logos/pepsi.png",
+    description: "Campaña digital y branding",
+    image: "/works/pepsi-work.jpg",
+  },
+  {
+    name: "Coca Cola",
+    logo: "/logos/cocacola.png",
+    description: "Campaña digital y branding",
+    image: "/works/cocacola-work.jpg",
+  },
+
+];
 
 export default function Clients() {
-    return (
-        <section className="py-24 flex justify-center gap-12 flex-wrap bg-black">
-
-            {clients.map((logo, i) => (
-                <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ delay: i * 0.2 }}
-                    viewport={{ once: true }}
-                >
-                    <Image
-                        src={logo}
-                        alt="client"
-                        width={120}
-                        height={120}
-                        className="opacity-70 hover:opacity-100 transition"
-                    />
-                </motion.div>
-            ))}
-
-        </section>
-    );
+  return (
+    <section className="py-24 flex justify-center gap-12 flex-wrap bg-black">
+      {clients.map((client, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.2 }}
+          viewport={{ once: true }}
+        >
+          <ClientHoverCard client={client} />
+        </motion.div>
+      ))}
+    </section>
+  );
 }

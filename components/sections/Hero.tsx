@@ -3,10 +3,6 @@
 import { motion } from "framer-motion";
 
 export default function Hero() {
-    // Configuración de Cloudinary
-    // TODO: Reemplaza 'tu_cloud_name' con tu ID real de Cloudinary
-    const cloudName = "tu_cloud_name";
-    const videoPublicId = "hero";
 
     // URL base con optimización automática de formato y calidad
     const videoBaseUrl = `https://res.cloudinary.com/dbkhp5oen/video/upload/f_auto,q_auto/hero_a64cvb`;
@@ -22,7 +18,7 @@ export default function Hero() {
                 playsInline
                 preload="auto"
                 // El póster carga una imagen fija optimizada instantáneamente mientras el video arranca
-                poster={`${videoBaseUrl}.jpg`}
+                poster={'/black.jpg'}
                 className="absolute inset-0 h-full w-full object-cover pointer-events-none"
             >
                 {/* Prioridad 1: WebM (Formato ultra-ligero para navegadores modernos) */}
