@@ -38,7 +38,13 @@ export default function AnimatedCard() {
             </motion.div>
 
             <motion.div variants={item}>
-                <Button>Contacto</Button>
+                <Button asChild>
+                    <a
+                        href="https://wa.me/59177178898?text=Hola%,%20quiero%20más%20información"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Contacto</a>
+                </Button>
             </motion.div>
         </motion.div>
     );
