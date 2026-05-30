@@ -1,6 +1,5 @@
 "use client";
 
-import { Analytics } from "@vercel/analytics/next"
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -30,8 +29,7 @@ const item = {
 
 export default function AnimatedCard() {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen px-6">
-            {/* CONTENIDO PRINCIPAL */}
+        <div className="flex flex-col items-center px-6 pt-32">            {/* CONTENIDO PRINCIPAL */}
             <motion.div
                 variants={container}
                 initial="hidden"
