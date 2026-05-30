@@ -121,9 +121,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
@@ -135,7 +137,13 @@
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+
 .fade-in.visible {
   opacity: 1;
   transform: none;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
