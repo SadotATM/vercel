@@ -12,7 +12,7 @@ const clients = [
   },
   {
     name: "Coca Cola",
-    logo: "/logos/cocacola.png",
+    logo: "/logos/cocacola-logo.png",
     description: "Campaña digital y branding",
     image: "/works/cocacola-work.jpg",
   },
