@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const clients = ["/CCW.png", "/PPSW.png", "/CCW.png"];
+const clients = ["/globe.svg", "/vercel.svg", "/next.svg"];
 
 export default function Clients() {
     return (
