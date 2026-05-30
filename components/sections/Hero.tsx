@@ -3,21 +3,37 @@
 import { motion } from "framer-motion";
 
 export default function Hero() {
-    return (
-        <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    // Configuración de Cloudinary
+    // TODO: Reemplaza 'tu_cloud_name' con tu ID real de Cloudinary
+    const cloudName = "tu_cloud_name";
+    const videoPublicId = "hero";
 
-            {/* VIDEO DE FONDO */}
+    // URL base con optimización automática de formato y calidad
+    const videoBaseUrl = `https://res.cloudinary.com/dbkhp5oen/video/upload/f_auto,q_auto/hero_a64cvb`;
+
+    return (
+        <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+
+            {/* VIDEO DE FONDO OPTIMIZADO */}
             <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 h-full w-full object-cover"
+                preload="auto"
+                // El póster carga una imagen fija optimizada instantáneamente mientras el video arranca
+                poster={`${videoBaseUrl}.jpg`}
+                className="absolute inset-0 h-full w-full object-cover pointer-events-none"
             >
-                <source src="/videos/hero.mp4" type="video/mp4" />            </video>
+                {/* Prioridad 1: WebM (Formato ultra-ligero para navegadores modernos) */}
+                <source src={`${videoBaseUrl}.webm`} type="video/webm" />
+                {/* Prioridad 2: MP4 (Formato de respaldo universal) */}
+                <source src={`${videoBaseUrl}.mp4`} type="video/mp4" />
+                Tu navegador no soporta videos de fondo.
+            </video>
 
             {/* OVERLAY (oscurece el video para que el texto se lea bien) */}
-            <div className="absolute inset-0 bg-black/60" />
+            <div className="absolute inset-0 bg-black/60 z-0" />
 
             {/* CONTENIDO */}
             <div className="relative z-10 text-center space-y-6">
